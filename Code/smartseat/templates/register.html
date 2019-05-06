@@ -67,14 +67,14 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" action="/userregister/" method="post">
         <h2 class="form-signin-heading" style="align-content: center">账号注册</h2>
-            <input type="text" class="input-block-level" placeholder="请输入学号">
-            <input type="text" class="input-block-level" placeholder="请输入姓名">
-            <input type="text" class="input-block-level" placeholder="请输入邮箱">
-            <input type="password" class="input-block-level" placeholder="请设置密码">
-            <input type="password" class="input-block-level" placeholder="请再次输入密码">
-        <button class="btn btn-large btn-primary" type="submit">注册</button>&nbsp;<a href="{% url 'pwset' %}"><u>设置密保</u></a>
+            <input type="text" name="id" class="input-block-level" placeholder="请输入学号">
+            <input type="text" name="name" class="input-block-level" placeholder="请输入姓名">
+            <input type="text" name="email" class="input-block-level" placeholder="请输入邮箱">
+            <input type="password" name="password1" class="input-block-level" placeholder="请设置密码">
+            <input type="password" name="password2" class="input-block-level" placeholder="请再次输入密码">
+        <button class="btn btn-large btn-primary" type="submit">注册</button>&nbsp;<span style="color: red">{{ message }}</span>
       </form>
 
     </div> <!-- /container -->

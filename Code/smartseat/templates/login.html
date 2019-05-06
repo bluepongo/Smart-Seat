@@ -11,6 +11,8 @@
 
     <!-- Le styles -->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <style type="text/css">
       body {
         padding-top: 40px;
@@ -42,7 +44,9 @@
         margin-bottom: 15px;
         padding: 7px 9px;
       }
-
+      .success{
+          text-align: center;
+      }
     </style>
     <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
 
@@ -62,6 +66,7 @@
   <body>
     <div class="header">
         <ul class="nav">
+            <h3 class="success" style="color: #cccccc">{{ success }}</h3>
         </ul>
     </div>
 
@@ -76,7 +81,8 @@
           <input type="checkbox" value="remember-me"> 记住密码
 
         </label>
-          <button class="btn btn-large btn-primary" type="submit">登录</button>&nbsp;<a href="{% url 'pwback' %}"><u>忘记密码</u></a>
+          <button class="btn btn-large btn-primary" type="submit" >登录</button>&nbsp;<span style="color: red">{{ logine }}</span>
+          <span style="color: red">{{ null }}</span>
       </form>
 
     </div> <!-- /container -->

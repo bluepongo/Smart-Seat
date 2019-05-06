@@ -1,90 +1,84 @@
-<html>
 {% load static %}
-<head>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-</head>
-<body  style="background-image: url(static/images/001.jpg)">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+        .lkank{
+            width:100px;
+            height:10px;
+            position: relative;
+            left:-40px;
+        }
+        .kank2{
+            position: relative;
+            left:350px;
+            top:100px;
+        }
+        #kkan{
+            position: relative;
+            top:100px;
+            right:600px;
+        }
+        .tlk{
+            position: relative;
+            right:150px;
+        }
+        .tlk2{
+             position: relative;
+             top:-64px;
+        }
+    </style>
+    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+<body  style="background-image: url(static/images/07.jpg)">
 
 <div class="header">
-    <ul class="nav">
-        <li><a href="{% url 'register' %}">注册</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
-        <li><a href="{% url 'login' %}">登录</a></li>
-
-    </ul>
+    <h1 style="font-size: 80px">智&nbsp;&nbsp; 能&nbsp;&nbsp;占&nbsp;&nbsp;座&nbsp;&nbsp;系&nbsp;&nbsp;统</h1>
 </div>
-
-<div class="main-content">
-    <h2>智能占座系统</h2>
-    <ul class="articles">
-
-        <li>
-            <img src="{% static 'images/01.jpg' %}" width="100" height="91">
-
-            <div class="article-info">
-                <h3><a href="#">一楼休闲区</a></h3>
-                <p class="meta-info">
-                    <span class="meta-cate">查看布局图</span>
-                    <span class="meta-cate">进入选座</span>
-                </p>
-                <p class="description">Just say something.</p>
-            </div>
-
-            <div class="rate">
-                <span class="rate-score">40%</span>
-            </div>
-        </li>
-
-        <li>
-            <img src="{% static 'images/02.jpg' %}" width="100" height="91">
-            <div class="article-info">
-                <h3><a href="#">二楼文学区</a></h3>
-                <p class="meta-info">
-                    <span class="meta-cate">查看布局图</span>
-                    <span class="meta-cate">进入选座</span>
-                </p>
-                <p class="description">Just say something.</p>
-            </div>
-
-            <div class="rate">
-                <span class="rate-score">50%</span>
-            </div>
-        </li>
-
-        <li>
-            <img src="{% static 'images/03.jpg' %}" width="100" height="91">
-            <div class="article-info">
-                <h3><a href="#">三楼法学区</a></h3>
-                <p class="meta-info">
-                    <span class="meta-cate">查看布局图</span>
-                    <span class="meta-cate">进入选座</span>
-                </p>
-                <p class="description">Just say something.</p>
-            </div>
-
-            <div class="rate">
-                <span class="rate-score">35%</span>
-            </div>
-        </li>
-
-        <li>
-            <img src="{% static 'images/04.jpg' %}" width="100" height="91">
-            <div class="article-info">
-                <h3><a href="#">四楼计算机区域</a></h3>
-                <p class="meta-info">
-                    <span class="meta-cate">查看布局图</span>
-                    <span class="meta-cate">进入选座</span>
-                </p>
-                <p class="description">Just say something.</p>
-            </div>
-
-            <div class="rate">
-                <span class="rate-score">30%</span>
-            </div>
-        </li>
-    </ul>
-</div>
-
 <div class="footer">
+    <ul class="nav" id="kkan">
+        <form class="form-signin" action="/register/" method="post"><li class="tlk"><button class="btn btn-large btn-primary" type="submit">注册</button></li></form>
+        <form class="form-signin" action="/login/" method="post"><li class="tlk2"><button class="btn btn-large btn-primary" type="submit">登录</button></li></form>
+    </ul>
 </div>
 </body>
 

@@ -3,13 +3,18 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/userindex.css' %}">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
 <body  style="background-image: url(/static/images/001.jpg)">
 
-<div class="header">
+<div class="header" >
     <ul class="nav">
-        <h3>欢迎您！</h3>
+        <h5  style="color: #cccccc">{% for names in name %}
+            {{ names.name}}
+        {% endfor %}|<a href="{% url 'userinformation' %}" style="color: #cccccc">个人中心</a>|<a href="{% url 'index' %}" style="color: #cccccc">登出</a></h5>
     </ul>
 </div>
 
@@ -18,73 +23,188 @@
     <ul class="articles">
 
         <li>
-            <img src="{% static 'images/01.jpg' %}" width="100" height="91">
+            <img src="{% static 'images/01.jpg' %}" width="100" height="67">
 
             <div class="article-info">
-                <h3><a href="#">一楼休闲区</a></h3>
+                <h4>一楼休闲区</h4>
                 <p class="meta-info">
-                    <span class="meta-cate">查看布局图</span>
-                    <span class="meta-cate">进入选座</span>
+                    <span class="meta-cate"><a href="#myModal1" role="button"  data-toggle="modal" style="color: white">查看布局图</a></span>
+                    <span class="meta-cate"><a href="#myModala" role="button"  data-toggle="modal" style="color: white">进入选座</a></span>
                 </p>
-                <p class="description">Just say something.</p>
-            </div>
-
-            <div class="rate">
-                <span class="rate-score">40%</span>
             </div>
         </li>
 
         <li>
-            <img src="{% static 'images/02.jpg' %}" width="100" height="91">
+            <img src="{% static 'images/002.jpg' %}" width="100" height="67">
             <div class="article-info">
-                <h3><a href="#">二楼文学区</a></h3>
+                <h4>二楼文学区</h4>
                 <p class="meta-info">
-                    <span class="meta-cate">查看布局图</span>
-                    <span class="meta-cate">进入选座</span>
+                    <span class="meta-cate"><a href="#myModal2" role="button"  data-toggle="modal" style="color: white">查看布局图</a></span>
+                    <span class="meta-cate"><a href="#myModala" role="button"  data-toggle="modal" style="color: white">进入选座</a></span>
                 </p>
-                <p class="description">Just say something.</p>
-            </div>
-
-            <div class="rate">
-                <span class="rate-score">50%</span>
             </div>
         </li>
 
         <li>
-            <img src="{% static 'images/03.jpg' %}" width="100" height="91">
+            <img src="{% static 'images/03.jpg' %}" width="100" height="67">
             <div class="article-info">
-                <h3><a href="#">三楼法学区</a></h3>
+                <h4>三楼法学区</h4>
                 <p class="meta-info">
-                    <span class="meta-cate">查看布局图</span>
-                    <span class="meta-cate">进入选座</span>
+                    <span class="meta-cate"><a href="#myModal3" role="button"  data-toggle="modal" style="color: white">查看布局图</a></span>
+                    <span class="meta-cate"><a href="#myModala" role="button"  data-toggle="modal" style="color: white">进入选座</a></span>
                 </p>
-                <p class="description">Just say something.</p>
-            </div>
-
-            <div class="rate">
-                <span class="rate-score">35%</span>
             </div>
         </li>
 
         <li>
-            <img src="{% static 'images/04.jpg' %}" width="100" height="91">
+            <img src="{% static 'images/04.jpg' %}" width="100" height="67">
             <div class="article-info">
-                <h3><a href="#">四楼计算机区域</a></h3>
+                <h4>四楼工学区</h4>
                 <p class="meta-info">
-                    <span class="meta-cate">查看布局图</span>
-                    <span class="meta-cate">进入选座</span>
+                    <span class="meta-cate"><a href="#myModal4" role="button"  data-toggle="modal" style="color: white">查看布局图</a></span>
+                    <span class="meta-cate"><a href="#myModala" role="button"  data-toggle="modal" style="color: white">进入选座</a></span>
                 </p>
-                <p class="description">Just say something.</p>
-            </div>
-
-            <div class="rate">
-                <span class="rate-score">30%</span>
             </div>
         </li>
     </ul>
 </div>
 
 <div class="footer">
+</div>
+<!-- 布局图Modal -->
+<div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">休闲区布局图</h3>
+  </div>
+  <div class="modal-body">
+    <img src="{% static 'images/01.jpg' %}" width="1000" height="670">
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+  </div>
+</div>
+<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">文学区布局图</h3>
+  </div>
+  <div class="modal-body">
+    <img src="{% static 'images/002.jpg' %}" width="1000" height="670">
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+  </div>
+</div>
+<div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">法学区布局图</h3>
+  </div>
+  <div class="modal-body">
+    <img src="{% static 'images/03.jpg' %}" width="1000" height="670">
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+  </div>
+</div>
+<div id="myModal4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">工学区布局图</h3>
+  </div>
+  <div class="modal-body">
+    <img src="{% static 'images/04.jpg' %}" width="1000" height="670">
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+  </div>
+</div>
+<!-- 选座Modal -->
+<div id="myModala" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">欢迎选座</h3>
+  </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="span4 offset3">
+            使用中：&nbsp;<button class="btn btn-success"></button> &nbsp;&nbsp;预定中：&nbsp;<button class="btn btn-primary"></button>&nbsp;&nbsp;空座位：&nbsp;<button class="btn"></button></button></div>
+            <div>
+        </div>
+            <br/><br/>
+            <div class="row">
+                <div class="span1"></div>
+                <div class="span2"><button class="btn btn-success"></button>&nbsp;&nbsp;<button class="btn btn-primary"></button>&nbsp;<button class="btn btn-success"></button></div>
+                <div class="span2 "><button class="btn btn-primary"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn btn-primary"></button></div>
+            </div>
+            <div class="row">
+                <div class="span1"></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn btn-primary"></button></div>
+                <div class="span2 "><button class="btn btn-primary"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn btn-success"></button>&nbsp;<button class="btn btn-success"></button></div>
+            </div>
+            <div class="row">
+                <div class="span1"></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2 "><button class="btn btn-primary"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2"><button class="btn  btn-success"></button>&nbsp;&nbsp;<button class="btn btn-success"></button>&nbsp;<button class="btn btn-success"></button></div>
+            </div>
+            <div class="row">
+                <div class="span1"></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2 "><button class="btn"></button>&nbsp;&nbsp;<button class="btn btn-success"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2"><button class="btn btn-success"></button>&nbsp;&nbsp;<button class="btn  btn-primary"></button>&nbsp;<button class="btn btn-success"></button></div>
+            </div>
+            <div class="row">
+                <div class="span1"></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2 "><button class="btn  btn-primary"></button>&nbsp;&nbsp;<button class="btn  btn-primary"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn  btn-primary"></button>&nbsp;<button class="btn"></button></div>
+            </div>
+            <div class="row">
+                <div class="span1"></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn btn-success"></button></div>
+                <div class="span2 "><button class="btn btn-success"></button>&nbsp;&nbsp;<button class="btn  btn-primary"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2"><button class="btn btn-primary"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+            </div>
+            <div class="row">
+                <div class="span1"></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2 "><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn"></button></div>
+            </div>
+            <div class="row">
+                <div class="span1"></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn btn-success"></button>&nbsp;<button class="btn"></button></div>
+                <div class="span2 "><button class="btn btn-success"></button>&nbsp;&nbsp;<button class="btn"></button>&nbsp;<button class="btn btn-success"></button></div>
+                <div class="span2"><button class="btn"></button>&nbsp;&nbsp;<button class="btn btn-success"></button>&nbsp;<button class="btn"></button></div>
+            </div>
+        </div>
+  </div>
+  <div class="modal-footer">
+     <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true"><a href="#myModals" role="button"  data-toggle="modal" style="color: white">确定</a></button>
+  </div>
+</div>
+
+ <!-- 预定检验 -->
+ <div id="myModals" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">预定验证</h3>
+  </div>
+  <div class="modal-body">
+      <form>
+        <form class="form-search">
+          <input type="text" class="input-medium search-query" placeholder="请输入验证码" style="height: 30px">
+          <button type="submit" class="btn" data-loading-text="重新发送">获取验证码</button>
+        </form>
+       </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary">确定</button>
+  </div>
 </div>
 </body>
 
