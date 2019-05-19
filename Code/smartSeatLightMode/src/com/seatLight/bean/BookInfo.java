@@ -4,70 +4,50 @@ import java.sql.Date;
 
 public class BookInfo {
 
-    private String id;
-    private String name;
-    private Date startTime;
-    private Integer timeLong;
-    private Date finishTime;
-    private Integer seatNum;
+    private Integer num;
+    private Integer state;
+    private Date time;
 
-    public String getId() {
-        return id;
+
+    public Integer getNum() {
+        return num;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
-    public String getName() {
-        return name;
+    public Integer getState() {
+        return state;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setState(Integer state) {
+        this.state = state;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public Date getTime() {
+        return time;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
-    public Integer getTimeLong() {
-        return timeLong;
+    public BookInfo() {
     }
 
-    public void setTimeLong(Integer timeLong) {
-        this.timeLong = timeLong;
-    }
-
-    public Date getFinishTime() {
-        return finishTime;
-    }
-
-    public void setFinishTime(Date finishTime) {
-        this.finishTime = finishTime;
-    }
-
-    public Integer getSeatNum() {
-        return seatNum;
-    }
-
-    public void setSeatNum(Integer seatNum) {
-        this.seatNum = seatNum;
+    public BookInfo(Integer num, Integer state, Date time) {
+        this.num = num;
+        this.state = state;
+        this.time = time;
     }
 
     @Override
     public String toString() {
         return "BookInfo{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", startTime=" + startTime +
-                ", timeLong=" + timeLong +
-                ", finishTime=" + finishTime +
-                ", seatNum=" + seatNum +
+                "num=" + num +
+                ", state=" + state +
+                ", time=" + time +
                 '}';
     }
 }

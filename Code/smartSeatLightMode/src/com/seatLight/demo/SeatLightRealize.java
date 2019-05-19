@@ -1,8 +1,8 @@
 package com.seatLight.demo;
 
+
 import com.seatLight.bean.BookInfo;
 import com.seatLight.utils.Utils;
-
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -13,49 +13,69 @@ import java.util.Date;
 import java.util.List;
 
 public class SeatLightRealize {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         JdbcTemplate jdbcTemplate = Utils.getJdbcTemplate();
 
-        String sql = "select * from bookseat";
-        List<BookInfo> infoList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(BookInfo.class));
+        while (true) {
 
-        for (BookInfo bookInfo : infoList) {
+            String sql = "select * from smart_deskstate";
+            List<BookInfo> infoList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(BookInfo.class));
 
-            Long currentTime = new Date().getTime();
-            Long startTime = bookInfo.getStartTime().getTime();
+            for (BookInfo bookInfo : infoList) {
 
-            if (currentTime >= startTime) {
+                Integer num = bookInfo.getNum() - 100;
+                Integer state = bookInfo.getState();
 
-                //PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
-                ////定义连接池最大的连接数
-                //connectionManager.setMaxTotal(200);
-                ////定义主机的最大的并发数
-                //connectionManager.setDefaultMaxPerRoute(20);
-                //HttpGet httpGet = new HttpGet("http://192.168.2.101/on");
-                //HttpRequestBase httpRequestBase = httpGet;
-                //httpRequestBase.setHeader("User-Agent", "Mozilla/5.0");
-                //CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(connectionManager).build();
-                //httpClient.execute(httpRequestBase);
+                String urlNameStringOff = "http://192.168.43." + num +"/off";
+                String urlNameStringOn = "http://192.168.43." + num +"/on";
 
-                String urlNameString = "http://192.168.2.101/on";
-                try {
-                    URL url = new URL(urlNameString);
-                    //打开url的连接
-                    URLConnection conn = url.openConnection();
-                    //设置连接属性
-                    conn.setConnectTimeout(6 * 1000);
-                    conn.connect();
-                    conn.getInputStream();
-                } catch (Exception e) {
+                if (state == 0) {
 
+                    System.out.println(bookInfo);
+
+                    //PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
+                    ////定义连接池最大的连接数
+                    //connectionManager.setMaxTotal(200);
+                    ////定义主机的最大的并发数
+                    //connectionManager.setDefaultMaxPerRoute(20);
+                    //HttpGet httpGet = new HttpGet("http://192.168.2.101/on");
+                    //HttpRequestBase httpRequestBase = httpGet;
+                    //httpRequestBase.setHeader("User-Agent", "Mozilla/5.0");
+                    //CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(connectionManager).build();
+                    //httpClient.execute(httpRequestBase);
+
+                    try {
+                        URL url = new URL(urlNameStringOff);
+                        //打开url的连接
+                        URLConnection conn = url.openConnection();
+                        //设置连接属性
+                        conn.setConnectTimeout(6 * 1000);
+                        conn.connect();
+                        conn.getInputStream();
+                    } catch (Exception e) {
+                        System.out.println("connect error!");
+                        continue;
+                    }
+
+                } else if (state == 1 || state == 2) {
+                    try {
+                        URL url = new URL(urlNameStringOn);
+                        //打开url的连接
+                        URLConnection conn = url.openConnection();
+                        //设置连接属性
+                        conn.setConnectTimeout(6 * 1000);
+                        conn.connect();
+                        conn.getInputStream();
+                    } catch (Exception e) {
+                        System.out.println("connect error!");
+                        continue;
+                    }
+                } else {
+                    continue;
                 }
-
-            } else if (currentTime < startTime) {
-                continue;
-            } else {
-                new IOException().printStackTrace();
             }
+            Thread.sleep(1000);
         }
     }
 }
