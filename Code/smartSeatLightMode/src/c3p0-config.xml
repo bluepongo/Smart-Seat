@@ -4,9 +4,9 @@
     <default-config>
         <!--  1. 数据库的连接参数 -->
         <property name="driverClass">com.mysql.jdbc.Driver</property>
-        <property name="jdbcUrl">jdbc:mysql://localhost:3306/smartseat</property>
+        <property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/smart</property>
         <property name="user">root</property>
-        <property name="password">20141112</property>
+        <property name="password">wskank521</property>
 
         <!-- 2. 连接池参数 -->
         <!--初始连接数-->
