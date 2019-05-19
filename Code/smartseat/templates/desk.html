@@ -1,0 +1,41 @@
+{% load static %}
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/userindex.css' %}">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body  style="background-image: url(/static/images/001.jpg)">
+
+<div class="header" >
+    <ul class="nav">
+        <h5  style="color: #cccccc">{% for names in name %}
+            {{ names}}
+        {% endfor %}|<a href="{% url 'userinformation' %}" style="color: #cccccc">个人中心</a>|<a href="{% url 'login' %}" style="color: #cccccc">登出</a></h5>
+    </ul>
+</div>
+<div class="main-content">
+    <span class="{{ t}}" style="width: 480px">{{ ms}}</span><br/><br/><br/><br/>
+    <form class="form-search" action="/check/" method="post">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<input type="text" class="input-medium search-query" name="id" placeholder="请输入验证码" style="height: 30px">
+        <button type="submit" class="btn">提交</button><br/><br/><br/><br/>
+    </form>
+     {% if messages %}
+        <script>
+            {% for msg in messages %}
+                alert('{{ msg.message }}');
+            {% endfor %}
+        </script>
+    {% endif %}
+</div>
+
+<div class="footer">
+</div>
+<!-- 布局图Modal -->
+
+</body>
+
+</html>

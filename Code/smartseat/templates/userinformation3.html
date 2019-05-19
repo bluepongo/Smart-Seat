@@ -36,6 +36,7 @@
             left:-40px;
         }
         .kank2{
+            width:300px;
             position: relative;
             left:350px;
             top:100px;
@@ -85,7 +86,7 @@
               <li class="" ><a href="{% url 'userinformation2' %}"><p class="lkank">占座记录</p></a></li>
               <li class="active" ><a href="{% url 'userinformation3' %}"><p class="lkank">修改密码</p></a></li>
             </ul>
-                <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
@@ -94,11 +95,13 @@
                 <div class="kank2">
                 {% csrf_token %}
                 <input type="password" name="password1" class="input-block-level" placeholder="请输入新密码" style="width: 200px"><br/>
+
                 <input type="password" name="password2" class="input-block-level" placeholder="请再次输入新密码" style="width: 200px"><br/>
+
                 <button class="btn btn-large btn-primary" type="submit" >提交</button>&nbsp;<span style="color: red">{{ message }}</span>
                 </div>
             </form>
-         <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+         <br/> <br/> <br/> <br/> <br/> <br/>
           </div>
 
     </div><!--/.fluid-container-->

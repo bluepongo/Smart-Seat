@@ -1,0 +1,26 @@
+{% load static %}
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/userindex.css' %}">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body  style="background-image: url(/static/images/001.jpg)">
+
+<div class="header" >
+    <ul class="nav">
+        <h5  style="color: #cccccc">{% for names in name %}
+            {{ names}}
+        {% endfor %}|<a href="{% url 'userinformation' %}" style="color: #cccccc">个人中心</a>|<a href="{% url 'login' %}" style="color: #cccccc">登出</a></h5>
+    </ul>
+</div>
+<br/><br/><br/><br/>
+<div class="main-content" style="align-content: center; height: 100px; width: 100px" id="use">
+    &nbsp;<h1 style="align-content: center; color: red">&nbsp;{{ er }}</h1>
+</div>
+</body>
+
+</html>

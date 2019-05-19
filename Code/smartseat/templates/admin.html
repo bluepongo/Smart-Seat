@@ -12,127 +12,21 @@
 
 <div class="header" >
     <ul class="nav">
-        <h5  style="color: #cccccc">{% for names in name %}
-            {{ names}}
-        {% endfor %}|<a href="{% url 'userinformation' %}" style="color: #cccccc">个人中心</a>|<a href="{% url 'login' %}" style="color: #cccccc">登出</a></h5>
+        <h5  style="color: #cccccc">
+            {{ name}}(admin)
+        |<a href="{% url 'userinformation' %}" style="color: #cccccc">个人中心</a>|<a href="{% url 'login' %}" style="color: #cccccc">登出</a></h5>
     </ul>
 </div>
-<div class="main-content">
-    <span class="{{ t}}" style="width: 480px">{{ ms}}</span>
-    <h2 style="width: 200px">智能占座系统</h2>
-    <ul class="articles">
-        <li>
-            <img src="{% static 'images/01.jpg' %}" width="100" height="67">
-
-            <div class="article-info">
-                <h4>一楼休闲区</h4>
-                <p class="meta-info">
-                    <span class="meta-cate"><a href="#myModal1" role="button"  data-toggle="modal" style="color: white">查看布局图</a></span>
-                    <span class="meta-cate"><a href="#myModala" role="button"  data-toggle="modal" style="color: white">进入选座</a></span>
-                </p>
-            </div>
-        </li>
-
-        <li>
-            <img src="{% static 'images/002.jpg' %}" width="100" height="67">
-            <div class="article-info">
-                <h4>二楼文学区</h4>
-                <p class="meta-info">
-                    <span class="meta-cate"><a href="#myModal2" role="button"  data-toggle="modal" style="color: white">查看布局图</a></span>
-                    <span class="meta-cate"><a href="#myModala" role="button"  data-toggle="modal" style="color: white">进入选座</a></span>
-                </p>
-            </div>
-        </li>
-
-        <li>
-            <img src="{% static 'images/03.jpg' %}" width="100" height="67">
-            <div class="article-info">
-                <h4>三楼法学区</h4>
-                <p class="meta-info">
-                    <span class="meta-cate"><a href="#myModal3" role="button"  data-toggle="modal" style="color: white">查看布局图</a></span>
-                    <span class="meta-cate"><a href="#myModala" role="button"  data-toggle="modal" style="color: white">进入选座</a></span>
-                </p>
-            </div>
-        </li>
-
-        <li>
-            <img src="{% static 'images/04.jpg' %}" width="100" height="67">
-            <div class="article-info">
-                <h4>四楼工学区</h4>
-                <p class="meta-info">
-                    <span class="meta-cate"><a href="#myModal4" role="button"  data-toggle="modal" style="color: white">查看布局图</a></span>
-                    <span class="meta-cate"><a href="#myModala" role="button"  data-toggle="modal" style="color: white">进入选座</a></span>
-                </p>
-            </div>
-        </li>
-    </ul>
-</div>
-
-<div class="footer">
-</div>
-<!-- 布局图Modal -->
-<div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">休闲区布局图</h3>
-  </div>
-  <div class="modal-body">
-    <img src="{% static 'images/01.jpg' %}" width="1000" height="670">
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-  </div>
-</div>
-<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">文学区布局图</h3>
-  </div>
-  <div class="modal-body">
-    <img src="{% static 'images/002.jpg' %}" width="1000" height="670">
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-  </div>
-</div>
-<div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">法学区布局图</h3>
-  </div>
-  <div class="modal-body">
-    <img src="{% static 'images/03.jpg' %}" width="1000" height="670">
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-  </div>
-</div>
-<div id="myModal4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">工学区布局图</h3>
-  </div>
-  <div class="modal-body">
-    <img src="{% static 'images/04.jpg' %}" width="1000" height="670">
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-  </div>
-</div>
-<!-- 选座Modal -->
-<div id="myModala" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">欢迎选座</h3>
-  </div>
-    <div class="modal-body">
+<br/><br/><br/><br/>
+<div class="main-content" style="align-content: center; height: 300px; width: 560px" id="use">
+   <div class="modal-body">
         <div class="row">
             <div class="span5 offset2">
             已损坏：<button class="btn btn-warning"></button>&nbsp;使用中：<button class="btn btn-success"></button> &nbsp;预定中：<button class="btn btn-primary"></button>&nbsp;空座位：<button class="btn"></button></button></div>
             <div>
         </div>
             <br/><br/>
-            <form class="form-signin" action="/deskstate/" method="post">
+            <form class="form-signin" action="/admindeel/" method="post">
             <div class="row">
                 <div class="span1"></div>
                 <div class="span2"><button class="{{ state.0}}" name="id" value="111">{{ sta.0 }}</button>&nbsp;&nbsp;<button class="{{ state.1}}" name="id" value="112">{{ sta.1 }}</button>&nbsp;<button class="{{ state.2}}" name="id" value="113">{{ sta.2 }}</button></div>
@@ -191,26 +85,8 @@
         </script>
     {% endif %}
   </div>
-  <div class="modal-footer">
-{#     <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true"><a href="#myModals" role="button"  data-toggle="modal" style="color: white">确定</a></button>#}
-  </div>
 </div>
 
- <!-- 预定检验 -->
- <div id="myModals" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">通知</h3>
-  </div>
-  <div class="modal-body">
-          <div class="alert alert-info">
-            {{ms}}
-           </div>
-  </div>
-  <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">确定</button>
-  </div>
-</div>
 </body>
 
 </html>

@@ -86,22 +86,35 @@
     <ul >
         <table class="table table-hover">
             {% for names in name %}
-                    <th>姓名</th><th>学号</th><th>密码</th><th>邮箱</th>
-                <tr>
-                    <td >{{ names.name}}</td>
-                    <td >{{ names.id}}</td>
-                    <td>{{ names.password}}</td>
-                    <td>{{ names.email}}<td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>密码</th>
+                        <th>邮箱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >{{ names.name}}</td>
+                        <td >{{ names.id}}</td>
+                        <td>{{ names.password}}</td>
+                        <td>{{ names.email}}<td>
+                    </tr>
+                </tbody>
 
             {% endfor %}
         </table>
-         <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+         <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
     </ul>
           </div>
 
     </div><!--/.fluid-container-->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container" style="color: #cccccc">
 
+        </div>
+    </nav>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

@@ -1,0 +1,42 @@
+{% load static %}
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/userindex.css' %}">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body  style="background-image: url(/static/images/001.jpg)">
+
+<div class="header" >
+    <ul class="nav">
+        <h5  style="color: #cccccc">{% for names in name %}
+            {{ names}}
+        {% endfor %}|<a href="{% url 'userinformation' %}" style="color: #cccccc">个人中心</a>|<a href="{% url 'login' %}" style="color: #cccccc">登出</a></h5>
+    </ul>
+</div>
+<br/><br/><br/><br/>
+<div class="main-content" style="align-content: center; height: 100px; width: 100px" id="use">
+    <img src="{% static 'images/09.gif' %}" alt="Generic placeholder image" width="140" height="140" >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-success">使用中....</span>
+</div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span5">
+          <!--Sidebar content-->
+        </div>
+          <div class="span2">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-large btn-primary" type="button"><a href="{% url 'shifang' %}" style="color: white">结束使用</a></button><br/><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-large btn-warning" type="button"><a href="{% url 'xiuli' %}" style="color: white">损坏报修</a></button>
+        </div>
+
+        <div class="span5">
+          <!--Body content-->
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
